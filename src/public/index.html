@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/423364dfa5.js" crossorigin="anonymous"></script>
+    <title>Chat JavaScript</title>
+</head>
+<body>
+
+    <audio id="enviar" src="./enviar.mp3" preload="auto"></audio>
+    <audio id="recibir" src="./recibir.mp3" preload="auto"></audio>
+
+    <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
+        <div class="card-header">
+            <h3>Escribí tu nombre</h3>
+        </div>
+        <p id="nickError"></p>
+        <div class="card-body">
+            <form id="nickForm" class="d-flex flex-column">
+                <input type="text" id="nickName" class="form-control" style="font-size: 1.5em;">
+                <button type="submit" class="btn btn-success mt-4 " style="font-size: 1.5em">
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                    Ingresar
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="contentWrap">
+        <div class="row">
+            <div class="col-md-6 offset-md-1 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Escribe aquí</h4>
+                    </div>
+                    <div id="chat" class="card-body"></div>
+                    <form class="card-footer" id="message-form">
+                        <div class="input-group">
+                            <input type="text" id="message" class="form-control">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-success">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card col-md-3 mt-4">
+                <div class="card-header">
+                    <h3>Usuarios</h3>
+                </div>
+                <div class="card-body">
+                    <div id="userName"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
